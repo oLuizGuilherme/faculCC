@@ -14,14 +14,14 @@ carne_mulher = qtd_mulheres * 0.478
 carne_crianca = qtd_crianca * 0.384
 carne_geral = carne_crianca + carne_mulher + carne_homem
 
-mensagem = ('A quantidade necessária de carne pra o churrasco será de: ' + str(carne_geral) + 'kg.\n')
+mensagem = ('A quantidade necessaria de carne pra o churrascão vai ser de: ' + str(carne_geral) + 'kg.\n')
 
 calcular_refri = input('Gostaria de calcular a quantidade de refrigerante? s/n ')
 if (calcular_refri == 's'):
     qtd_refri = qtd_homens * 1 + qtd_mulheres * 1 + qtd_crianca * 0.5
-    mensagem = mensagem + 'A quantidade de refrigerante indicado será de: ' + str(qtd_refri) + 'L.'
+    mensagem = mensagem + 'A quantidade de refri indicado sera de: ' + str(qtd_refri) + 'L.'
 elif (calcular_refri == 'n'):
-    mensagem = mensagem + 'Não ocorreu o cálculo do refrigerante'
+    mensagem = mensagem + 'kk n quis refri otario'
 else:
     print("Alternativa inválida. Finalizando o programa!")
     exit()
