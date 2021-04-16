@@ -1,0 +1,12 @@
+11/04/2021
+Relatório da atividade de Laboratório de programação 1
+
+Grupo: Luana Amy, Luiz Guilherme Zortéa e Yan Cancella
+
+O programa desenvolvido foi um churrascômentro. Um programa que calcula basicamente a quantidade mínima de carne, em Kg, necessária para um churrasco, baseado no número de pessoas presentes.
+O nosso programa pergunta a quantidade de participantes do churrasco separando-os em homens, mulheres e crianças e faz o cálculo simples de multiplicação e soma com base no que cada uma das "categorias" (homem, mulher ou criança) consome em média. Os dados da quantidade de carne ingerida por cada um foram estipulados e não obrigatoriamente estão precisos.
+Trouxemos também a opção do usuário solicitar ou não o calculo da quantidade média de refrigerante consumida. Assim como os dados da quantidade de carne consumida, os dados da quantidade de refrigerante consumida não obrigatóriamente estão precisos.
+Se o usuário solicitar o cálculo do refrigerante, ele será incluido no resultado final. Caso não solicite, não será apresentado no resultado.
+
+O trabalho foi feito em conjunto pelos 3 integrantes. Todos com sugestões, implementações e correções.
+O resultado final foi feito por Luiz e Yan e corrigido por Luana.
