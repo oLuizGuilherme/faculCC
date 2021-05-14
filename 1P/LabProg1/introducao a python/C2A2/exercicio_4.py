@@ -63,10 +63,10 @@ while (True):
 media_altura = alturas / qtd_clientes
 media_peso = pesos / qtd_clientes
 
-print(f'O mais alto é o cliente {codigo_mais_alto} com a altura {valor_mais_alto:.2f} cm.')
-print(f'O mais baixo é o cliente {codigo_mais_baixo} com a altura {valor_mais_baixo:.2f} cm.')
-print(f'O mais gordo é o cliente {codigo_mais_gordo} com o peso {valor_mais_gordo:.2f} kg.')
-print(f'O mais magro é o cliente {codigo_mais_magro} com o peso, {valor_mais_magro:.2f} kg.')
+print(f'O mais alto é o cliente {codigo_mais_alto} com a altura {valor_mais_alto:.2f} m.')
+print(f'O mais baixo é o cliente {codigo_mais_baixo} com a altura {valor_mais_baixo:.2f} m.')
+print(f'O mais gordo é o cliente {codigo_mais_gordo} com o peso {valor_mais_gordo:.2f} Kg.')
+print(f'O mais magro é o cliente {codigo_mais_magro} com o peso, {valor_mais_magro:.2f} Kg.')
 
 print(f'A média das alturas da academia é: {media_altura:.2f} cm.')
 print(f'A média de pesos da academia é: {media_peso:.2f} kg.')
