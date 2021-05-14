@@ -1,0 +1,72 @@
+""" 4. Uma academia deseja fazer um senso entre seus clientes para 
+    descobrir o mais alto, o mais baixo, a mais gordo e o mais magro, 
+    para isto você deve fazer um programa que pergunte a cada um dos 
+    clientes da academia seu código, sua altura e seu peso. O final da 
+    digitação de dados deve ser dada quando o usuário digitar 0 (zero) no 
+    campo código. Ao encerrar o programa também deve ser informados os códigos 
+    e valores do clente mais alto, do mais baixo, do mais gordo e do mais magro, 
+    além da média das alturas e dos pesos dos clientes """
+
+# Mais alto
+codigo_mais_alto = 0
+valor_mais_alto = 0
+
+# Mais Baixo
+codigo_mais_baixo = 0
+valor_mais_baixo = 9999999999
+
+# Mais gordo
+codigo_mais_gordo = 0
+valor_mais_gordo = 0
+
+# Mais magro
+codigo_mais_magro = 0
+valor_mais_magro = 9999999999
+
+#Codigo =)
+codigo = 1
+
+# Quantidade de clientes
+qtd_clientes = 0
+
+# Variáveis para a média
+alturas = 0
+pesos = 0
+
+while (True):
+    codigo = int(input('Informe o seu código: '))
+    if (codigo == 0):
+        break
+    altura = float(input('Informe a sua altura: '))
+    peso = float(input('Informe o seu peso: '))
+
+    qtd_clientes += 1
+    alturas += altura
+    pesos += peso
+
+    if (altura > valor_mais_alto):
+        codigo_mais_alto = codigo
+        valor_mais_alto = altura
+    
+    if (altura < valor_mais_baixo):
+        codigo_mais_baixo = codigo
+        valor_mais_baixo = altura
+        
+    if (peso > valor_mais_gordo):
+        codigo_mais_gordo = codigo
+        valor_mais_gordo = peso
+    
+    if(peso < valor_mais_magro):
+        codigo_mais_magro = codigo
+        valor_mais_magro = peso
+
+media_altura = alturas / qtd_clientes
+media_peso = pesos / qtd_clientes
+
+print(f'O mais alto é o cliente {codigo_mais_alto} com a altura {valor_mais_alto:.2f} cm.')
+print(f'O mais baixo é o cliente {codigo_mais_baixo} com a altura {valor_mais_baixo:.2f} cm.')
+print(f'O mais gordo é o cliente {codigo_mais_gordo} com o peso {valor_mais_gordo:.2f} kg.')
+print(f'O mais magro é o cliente {codigo_mais_magro} com o peso, {valor_mais_magro:.2f} kg.')
+
+print(f'A média das alturas da academia é: {media_altura:.2f} cm.')
+print(f'A média de pesos da academia é: {media_peso:.2f} kg.')
