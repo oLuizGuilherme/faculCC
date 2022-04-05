@@ -9,11 +9,15 @@ public class AppDeListasContiguas {
 		LCInteiroV2 l1 = leLCInteiro();
 		LCInteiroV2 l2 = leLCInteiro();
 		
-		InOut.msgDeInformacao("Exibir lista" , l1.toString() + "\n" + l2.toString());
 		
-//		comparaLcInt(lcInteiro1, lcInteiro2);
+		boolean comparaIguais = comparaIguais(l1, l2);
+		if (comparaIguais) {
+			InOut.msgDeInformacao("Exibir lista" , l1.toString() + "\n" + l2.toString() + "\nAs listas são iguais." );
+		} else {
+			InOut.msgDeInformacao("Exibir lista" , l1.toString() + "\n" + l2.toString() + "\nAs listas não são iguais." );
+		}
 		
-		InOut.msgDeInformacao("MORRA", concatenar(l1, l2).toString());
+		InOut.msgDeInformacao("Lista concatenada", concatenar(l1, l2).toString());
 	}
 	
 
@@ -27,6 +31,22 @@ public class AppDeListasContiguas {
 		
 		return listaC;
 	}
+	
+	 public static boolean comparaIguais(LCInteiroV2 l1, LCInteiroV2 l2){
+	        
+	        if(l1.getNElem() == l2.getNElem()) {
+	            
+	            for(int i = 0; i < l1.getNElem(); i++) {
+	                
+	                if(l1.getNum(i) != l2.getNum(i)){
+	                    return false;
+	                }
+	                
+	            }
+	            return true;
+	        }
+	        return false;
+	    }
 	
 	public static LCInteiroV2 concatenar(LCInteiroV2 l1, LCInteiroV2 l2) {
 		int soma = l1.getNElem()+l2.getNElem();

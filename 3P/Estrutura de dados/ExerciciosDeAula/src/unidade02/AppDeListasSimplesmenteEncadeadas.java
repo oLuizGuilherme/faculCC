@@ -9,10 +9,12 @@ public class AppDeListasSimplesmenteEncadeadas {
 		LseIntV2 l1 = leLCInteiro();
 		LseIntV2 l2 = leLCInteiro();
 
-		InOut.msgDeInformacao("Exibir listas", l1.toString() + "\n" + l2.toString());
-
 		boolean comparaLseInt = comparaLseInt(l1, l2);
-		InOut.msgDeInformacao("As listas são iguais?", comparaLseInt + "");
+		if (comparaLseInt) {
+			InOut.msgDeInformacao("Exibir lista" , l1.toString() + "\n" + l2.toString() + "\nAs listas são iguais." );
+		} else {
+			InOut.msgDeInformacao("Exibir lista" , l1.toString() + "\n" + l2.toString() + "\nAs listas não são iguais." );
+		}
 		
 		InOut.msgDeInformacao("Lista concatenada", concat(l1, l2).toString());
 
