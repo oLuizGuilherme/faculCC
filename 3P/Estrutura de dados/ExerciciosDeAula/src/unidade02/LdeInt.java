@@ -33,7 +33,7 @@ public class LdeInt {
 		return nElem == 0;
 	}
 
-	public void insereUltimo(int info) {
+	public void insereFinal(int info) {
 		NoDuplaInt novoNo = new NoDuplaInt(info);
 		if (eVazia()) {
 			setPrim(novoNo);
@@ -103,6 +103,72 @@ public class LdeInt {
 			this.setUlt(lista1.getUlt());
 			this.nElem += lista1.getnElem();
 		}
+	}
+	
+	public String toString() {
+		String temp = "";
+		NoDuplaInt atual = this.prim;
+		while (atual!= null) {
+			temp += atual.toString()+"   ";
+			atual = atual.getProx();
+		}
+		return temp;
+	}
+	
+	public boolean inserir (int num, int pos) {
+		if (pos<0 || pos>nElem) {
+			return false;
+		}
+		if (pos==0) {
+			insereInicio(num);
+		}else if (pos==nElem) {
+			insereFinal(num);
+		}else {
+			NoDuplaInt atual = this.getNo(pos);
+			NoDuplaInt ant = atual.getAnt();
+			NoDuplaInt novoNo  = new NoDuplaInt(num);
+			ant.setProx(novoNo);
+			novoNo.setAnt(ant);
+			novoNo.setProx(atual);
+			atual.setAnt(novoNo);
+			this.nElem++;
+		}
+		return true;
+	}
+	
+	public boolean removePosicao (int pos) {
+		NoDuplaInt aux = this.getNo(pos);
+		if (aux==null) {
+			return false;
+		}else {
+			this.remove(aux.getInfo());
+			return true;
+		}
+	}
+	
+	public NoDuplaInt getNo (int pos) {
+		if (pos<0 || pos >= nElem) {
+			return null;
+		}
+		NoDuplaInt aux = this.prim;
+		for (int i=0; i<pos; i++) {
+			aux = aux.getProx();
+		}
+		return aux;
+	}
+	
+	public void divide (LdeInt l1, LdeInt l2) {
+		int pos = l1.nElem/2;
+		NoDuplaInt aux = l1.getNo(pos);
+		l2.prim = aux;
+		l2.ult = l1.ult;
+		aux = aux.getAnt();
+		l1.ult = aux;
+		l1.ult.setProx(null);
+		l2.prim.setAnt(null);
+		// atualiza o nElem
+		l2.nElem = l1.nElem-(pos+1);
+		l1.nElem = pos+1;
 	}
 
 }
