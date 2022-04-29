@@ -46,15 +46,23 @@ public class AppDeLDE {
 	}
 
 	public static LdeInt unirListas(LdeInt l1, LdeInt l2) {
-		NoDuplaInt aux = l2.getPrim();
+		LdeInt l4 = new LdeInt();
+		NoDuplaInt aux = l1.getPrim();
 		while (aux != null) {
-			if (l1.pesquisa(aux.getInfo()) == null) {
-				l1.insereFinal(aux.getInfo());
+			if (l4.pesquisa(aux.getInfo()) == null) {
+				l4.insereFinal(aux.getInfo());
+			}
+			aux = aux.getProx();
+		}
+		aux = l2.getPrim();
+		while (aux != null) {
+			if (l4.pesquisa(aux.getInfo()) == null) {
+				l4.insereFinal(aux.getInfo());
 			}
 			aux = aux.getProx();
 		}
 
-		return l1;
+		return l4;
 	}
 
 	private static String montaExibicao(LdeInt l1, LdeInt l2) {
