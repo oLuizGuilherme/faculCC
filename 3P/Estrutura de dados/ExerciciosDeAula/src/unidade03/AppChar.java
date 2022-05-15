@@ -28,7 +28,7 @@ public class AppChar {
 
 	private static boolean verificaPalindromo() {
 		
-		while (pilha.top() != null) {
+		while (!pilha.isEmpty()) {
 			if (pilha.pop().getInfo() != fila.dequeue().getInfo()) 
 				return false;
 		}
