@@ -79,15 +79,7 @@ public class VetVendedor {
 	}
 	
 	public BigDecimal mediaVendas(Categoria categoria) {
-		int quantVendasCategoria = 0;
-		BigDecimal totalVendasCategoria = new BigDecimal(0);
-		for (int i = 0; i < nElem; i++) {
-			if (vet[i].getCategoria().equals(categoria)) {
-				totalVendasCategoria.add(vet[i].getTotalVendas());
-				quantVendasCategoria++;
-			}
-		}
-		return totalVendasCategoria.divide(new BigDecimal(quantVendasCategoria));
+		return totalVendas(categoria) / quantVendedor(categoria);
 	}
 
 }
