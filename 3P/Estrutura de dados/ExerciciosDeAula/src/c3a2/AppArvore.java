@@ -6,13 +6,10 @@ public class AppArvore {
 
 	private static String menuMsg = "1- Votar \n2- Resultados \n3- Sair";
 	private static ArvorePessoa arvore;
-	private static int votosSim, votosNao;
 
 	public static void main(String[] args) {
 		arvore = new ArvorePessoa();
-		votosNao = 0;
-		votosSim = 0;
-		
+
 		menu();
 
 	}
@@ -40,13 +37,15 @@ public class AppArvore {
 	}
 
 	private static void votar() {
-		long cpf = InOut.leLong("Por favor informe o cpf do eleitor.");
-		Pessoa pessoa = new Pessoa("", cpf);
-		boolean votou = arvore.pesquisar(pessoa) != null;
+		String nome = InOut.leString("Informe o nome do eleitor.");
+		long cpf = InOut.leLong("Informe o cpf do eleitor.");
+		Pessoa pessoa = new Pessoa(nome, cpf);
+		NoPessoa pesquisar = arvore.pesquisar(pessoa);
+		boolean votou = pesquisar != null;
 
 		if (votou) {
 			InOut.msgDeErro("Voto já computado",
-					"Voto do cpf " + cpf + " já computado.\nNão é possível votar mais de uma vez.");
+					"O voto de " + pesquisar.getPessoa().getNome() + " com o cpf " + cpf + " já foi computado.\nNão é possível votar mais de uma vez.");
 			return;
 		}
 
@@ -63,13 +62,13 @@ public class AppArvore {
 			switch (op) {
 			case 1:
 				valido = true;
-				votosSim++;
+				pessoa.setVoto(1);
 				arvore.inserir(pessoa);
 
 				break;
 			case 2:
 				valido = true;
-				votosNao++;
+				pessoa.setVoto(2);
 				arvore.inserir(pessoa);
 
 				break;
@@ -85,9 +84,33 @@ public class AppArvore {
 
 	private static void resultados() {
 
-		InOut.msgDeInformacao("RESULTADO DA VOTAÇÃO",
-				"Quantidade de votos\nVotos sim: " + votosSim + ".\nVotos não: " + votosNao + ".");
+		int votosSim = contaVotosSim();
 
+		InOut.msgDeInformacao("RESULTADO DA VOTAÇÃO",
+				"Quantidade de votos\nVotos sim: " + votosSim + ".\nVotos não: " + (arvore.getnElem() - votosSim) + ".");
+
+	}
+
+	private static int contaVotosSim() {
+		if (arvore.eVazia()) {
+			return 0;
+		}
+
+		LCPessoa vetor = new LCPessoa(arvore.getnElem());
+		vetor = camArvoreInOrdem(vetor, arvore.getRaiz());
+
+		return vetor.getnElem();
+	}
+
+	private static LCPessoa camArvoreInOrdem(LCPessoa vetor, NoPessoa no) {
+		if (no != null) {
+			vetor =  camArvoreInOrdem(vetor, no.getEsq());
+			if (no.getPessoa().getVoto() == 1) {
+				vetor.insereFim(no.getPessoa());
+			}
+			vetor = camArvoreInOrdem(vetor, no.getDir());
+		}
+		return vetor;
 	}
 
 }

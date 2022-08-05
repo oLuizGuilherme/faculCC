@@ -4,6 +4,11 @@ public class Pessoa {
 
 	private String nome;
 	private long cpf;
+	/**
+	 * voto = 1 == sim
+	 * voto = 2 == não
+	 */
+	private int voto;
 
 	public Pessoa() {
 	}
@@ -28,18 +33,18 @@ public class Pessoa {
 	public void setCpf(long cpf) {
 		this.cpf = cpf;
 	}
+
+	public int getVoto() {
+		return voto;
+	}
+	
+	public void setVoto(int voto) {
+		this.voto = voto;
+	}
 	
 	@Override
 	public String toString() {
-		if (nome != null && cpf != 0) {
-			return nome + " - " + cpf;
-		} else if (nome != null) {
-			return nome;
-		} else if (cpf != 0) {
-			return "CPF: " + cpf;
-		} else {
-			return "";
-		}
+		return nome + " - " + cpf;
 	}
 
 }

@@ -6,15 +6,12 @@ public class ArvorePessoa {
 	private int nElem;
 
 	public ArvorePessoa() {
+		this.raiz = null;
 		this.nElem = 0;
 	}
 
 	public boolean eVazia() {
-		if (this.raiz == null) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.raiz == null;
 	}
 
 	public NoPessoa getRaiz() {
@@ -41,7 +38,7 @@ public class ArvorePessoa {
 			return no;
 		}
 	}
-
+	
 	public boolean inserir(Pessoa pessoa) {
 		if (this.pesquisar(pessoa) != null) {
 			return false;
