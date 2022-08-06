@@ -71,7 +71,7 @@ public class Vendedor {
 	
 	@Override
 	public String toString() {
-		return nome;
+		return "Nome: " + nome + " \\| Salário: " + salario();
 	}
 	
 	public BigDecimal comissao() {

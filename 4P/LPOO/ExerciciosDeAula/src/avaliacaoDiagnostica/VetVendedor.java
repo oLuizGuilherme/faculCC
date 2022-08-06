@@ -17,14 +17,14 @@ public class VetVendedor {
 	}
 
 	public Vendedor getVendedor(int i) {
-		if (i > nElem)
+		if (i => nElem || i < 0)
 			return null;
 		return vet[i];
 	}
 
 	public int pesquisa(String nome) {
 		for (int i = 0; i < nElem; i++) {
-			if (vet[i].getNome().equals(nome)) {
+			if (vet[i].getNome().equalsIgnoreCase(nome)) {
 				return i;
 			}
 		}
@@ -52,7 +52,7 @@ public class VetVendedor {
 		if (pesquisa == -1)
 			return false;
 
-		vet[pesquisa] = vet[nElem];
+		vet[pesquisa] = vet[nElem-1];
 		nElem--;
 
 		return true;
