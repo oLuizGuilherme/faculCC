@@ -17,7 +17,7 @@ public class VetVendedor {
 	}
 
 	public Vendedor getVendedor(int i) {
-		if (i => nElem || i < 0)
+		if (i >= nElem || i < 0)
 			return null;
 		return vet[i];
 	}
@@ -79,7 +79,9 @@ public class VetVendedor {
 	}
 	
 	public BigDecimal mediaVendas(Categoria categoria) {
-		return totalVendas(categoria) / quantVendedor(categoria);
+		if (BigDecimal.valueOf(quantVendedor(categoria)).compareTo(BigDecimal.valueOf(0)) > 0)
+			return totalVendas(categoria).divide(BigDecimal.valueOf(quantVendedor(categoria)));
+		return BigDecimal.valueOf(0);
 	}
 
 }

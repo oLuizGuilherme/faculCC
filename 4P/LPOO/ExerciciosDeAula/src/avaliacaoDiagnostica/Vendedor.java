@@ -12,13 +12,12 @@ public class Vendedor {
 
 	public Vendedor() {
 	}
-	
-	public Vendedor(String nome, Integer tempoServico,
-			BigDecimal totalVendas) {
+
+	public Vendedor(String nome, Integer tempoServico, BigDecimal totalVendas) {
 		this.nome = nome;
 		this.salarioBase = new BigDecimal(1500);
-		this.setCategoria();
 		this.tempoServico = tempoServico;
+		this.setCategoria();
 		this.totalVendas = totalVendas;
 	}
 
@@ -68,32 +67,32 @@ public class Vendedor {
 	public void setTotalVendas(BigDecimal totalVendas) {
 		this.totalVendas = totalVendas;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Nome: " + nome + " \\| Salário: " + salario();
+		return "Nome: " + nome + " | Salário: " + salario();
 	}
-	
+
 	public BigDecimal comissao() {
-		if (totalVendas.compareTo(new BigDecimal(20000)) > 0) {
-			return totalVendas.multiply(new BigDecimal(0.2));
-		} else if (totalVendas.compareTo(new BigDecimal(10000)) > 0){
-			return totalVendas.multiply(new BigDecimal(0.15));
+		if (totalVendas.compareTo(BigDecimal.valueOf(20000)) > 0) {
+			return totalVendas.multiply(BigDecimal.valueOf(0.2));
+		} else if (totalVendas.compareTo(BigDecimal.valueOf(10000)) > 0) {
+			return totalVendas.multiply(BigDecimal.valueOf(0.15));
 		} else {
-			return totalVendas.multiply(new BigDecimal(0.05));
+			return totalVendas.multiply(BigDecimal.valueOf(0.05));
 		}
 	}
-	
+
 	public BigDecimal gratificacao() {
 		if (categoria.equals(Categoria.A)) {
-			return salarioBase.multiply(new BigDecimal(0.15));
+			return salarioBase.multiply(BigDecimal.valueOf(0.15));
 		} else if (categoria.equals(Categoria.B)) {
-			return salarioBase.multiply(new BigDecimal(0.075));
+			return salarioBase.multiply(BigDecimal.valueOf(0.075));
 		} else {
 			return new BigDecimal(0);
 		}
 	}
-	
+
 	public BigDecimal salario() {
 		return salarioBase.add(comissao()).add(gratificacao());
 	}
