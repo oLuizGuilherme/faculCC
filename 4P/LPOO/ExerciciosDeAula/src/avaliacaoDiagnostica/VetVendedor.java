@@ -79,8 +79,9 @@ public class VetVendedor {
 	}
 	
 	public BigDecimal mediaVendas(Categoria categoria) {
-		if (BigDecimal.valueOf(quantVendedor(categoria)).compareTo(BigDecimal.valueOf(0)) > 0)
-			return totalVendas(categoria).divide(BigDecimal.valueOf(quantVendedor(categoria)));
+		BigDecimal quantidade = BigDecimal.valueOf(quantVendedor(categoria)).compareTo(BigDecimal.valueOf(0));
+		if (quantidade > 0)
+			return totalVendas(categoria).divide(quantidade);
 		return BigDecimal.valueOf(0);
 	}
 
