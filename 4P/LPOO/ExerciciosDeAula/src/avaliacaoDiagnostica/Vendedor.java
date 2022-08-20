@@ -33,10 +33,6 @@ public class Vendedor {
 		return salarioBase;
 	}
 
-	public void setSalarioBase(BigDecimal salarioBase) {
-		this.salarioBase = salarioBase;
-	}
-
 	public Integer getTempoServico() {
 		return tempoServico;
 	}
