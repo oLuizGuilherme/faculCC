@@ -29,8 +29,12 @@ public class Vendedor {
 		this.nome = nome;
 	}
 
-	public BigDecimal getSalarioBase() {
+	public static BigDecimal getSalarioBase() {
 		return salarioBase;
+	}
+
+	public static void setSalarioBase(BigDecimal salarioBase){
+		this.salarioBase = salarioBase;
 	}
 
 	public Integer getTempoServico() {
