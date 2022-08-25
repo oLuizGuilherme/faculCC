@@ -76,6 +76,7 @@ public class AppEmpresa {
 	private static void imprimirMediaVendasPorCategoria() {
 
 		char categoria = InOut.leChar("Digite a letra correspondente à categoria que deseja saber a média de vendas.");
+		Character.toUpperCase(categoria);
 		switch (categoria) {
 		case 'A':
 			InOut.msgDeInformacao("Média de vendas da categoria A", vetor.mediaVendas(Categoria.A).toString());

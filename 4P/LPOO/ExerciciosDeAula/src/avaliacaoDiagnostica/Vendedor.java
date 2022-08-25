@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class Vendedor {
 
 	private String nome;
-	private BigDecimal salarioBase;
+	private static BigDecimal salarioBase = new BigDecimal(1500);
 	private Integer tempoServico;
 	private Categoria categoria;
 	private BigDecimal totalVendas;
@@ -15,7 +15,6 @@ public class Vendedor {
 
 	public Vendedor(String nome, Integer tempoServico, BigDecimal totalVendas) {
 		this.nome = nome;
-		this.salarioBase = new BigDecimal(1500);
 		this.tempoServico = tempoServico;
 		this.setCategoria();
 		this.totalVendas = totalVendas;
@@ -34,7 +33,7 @@ public class Vendedor {
 	}
 
 	public static void setSalarioBase(BigDecimal salarioBase){
-		this.salarioBase = salarioBase;
+		Vendedor.salarioBase = salarioBase;
 	}
 
 	public Integer getTempoServico() {
