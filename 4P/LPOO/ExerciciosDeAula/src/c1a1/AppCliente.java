@@ -46,7 +46,7 @@ public class AppCliente {
 		if (salvou) {
 			InOut.msgDeInformacao("SUA SENHA", cliente.getSenha() + "");
 		} else {
-			InOut.msgDeAviso("AVISO CARALHO", "Não dá pra salvar mais, caralho");
+			InOut.msgDeAviso("AVISO", "Não existe mais espaço para atendimento. Tente novamente mais tarde.");
 		}
 	}
 
@@ -54,18 +54,16 @@ public class AppCliente {
 		Cliente.proximo();
 		boolean existe = false;
 		for (int i = 0; i < vetor.length; i++) {
-			if (vetor[i] == null)
-				continue;
-			if (vetor[i].getSenha() == Cliente.getSenhaGeral()) {
+			if (vetor[i]!= null && vetor[i].getSenha() == Cliente.getSenhaGeral()) {
 				existe = true;
 				Cliente cliente = vetor[i];
 				vetor[i] = null;
-				InOut.msgDeAviso("AVISO CARALHO", "O próximo cliente é " + cliente.toString());
+				InOut.msgDeAviso("AVISO", "O próximo cliente é " + cliente.toString());
 				break;
 			}
 		}
 		if (!existe) {
-			InOut.msgDeAviso("AVISO CARALHO", "Não existem clientes para serem atendidos");
+			InOut.msgDeAviso("AVISO", "Não existem clientes para serem atendidos");
 		}
 
 	}
