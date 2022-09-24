@@ -1,5 +1,8 @@
 package c1a2;
 
+import java.util.Arrays;
+import java.util.TreeSet;
+
 import io.InOut;
 
 public class LinkedListApp {
@@ -22,7 +25,7 @@ public class LinkedListApp {
 		
 		String msgPilha;
 		String msgFila;
-
+		
 		if (!pilha.eVazia()) {
 			msgPilha = "O valor no topo da pilha é " + pilha.top();
 		} else {
