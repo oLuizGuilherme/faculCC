@@ -1,0 +1,8 @@
+https://www.kaggle.com/mirichoi0218/insurance
+idade: idade do beneficiário principal
+sexo: sexo do contratante do seguro, feminino, masculino
+bmi: índice de massa corporal, fornecendo uma compreensão do corpo, pesos que são relativamente altos ou baixos em relação à altura, índice objetivo de peso corporal (kg / m ^ 2) usando a relação entre altura e peso, idealmente 18,5 a 24,9
+filhos: Número de filhos cobertos pelo seguro saúde / Número de dependentes
+fumante: fumar
+região: área residencial do beneficiário nos EUA, nordeste, sudeste, sudoeste, noroeste.
+encargos: despesas médicas individuais cobradas pelo seguro saúde

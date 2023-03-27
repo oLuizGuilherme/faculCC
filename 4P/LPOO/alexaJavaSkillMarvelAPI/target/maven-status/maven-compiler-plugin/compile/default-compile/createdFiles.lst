@@ -1,0 +1,6 @@
+alexa\skill\marvel\api\HelloWorldStreamHandler.class
+alexa\skill\marvel\api\LaunchRequestHandler.class
+alexa\skill\marvel\api\SessionEndedRequestHandler.class
+alexa\skill\marvel\api\CancelandStopIntentHandler.class
+alexa\skill\marvel\api\HelpIntentHandler.class
+alexa\skill\marvel\api\HelloWorldIntentHandler.class
