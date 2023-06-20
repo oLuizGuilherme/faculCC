@@ -32,3 +32,9 @@ Fluxo do Projeto
 
 Como Executar o Projeto
 Dentro do projeto existe um arquivo chamado DOCUMENTAÇÃO.docx que contém as informações para conseguir executar o projeto.
+
+Link para o zip com os dados usados
+https://drive.google.com/file/d/1XpscIVOPyrQeoQ7ywejASbG_Ibe5qKNu/view?usp=sharing
+
+Link para o vídeo de apresentação
+https://youtu.be/W-5Jna9-NjQ
